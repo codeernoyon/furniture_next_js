@@ -4,7 +4,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  appDir: true,
+  experimental: {
+    appDir: true,
+  },
   images: {
     domains: ["v5.airtableusercontent.com"],
   },
