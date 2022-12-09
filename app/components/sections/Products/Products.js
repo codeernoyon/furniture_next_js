@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import BackStyle from "../../elements/BckStyle";
+import Promo from "../Promo";
 import BestDeal from "./BestDeal";
+import Essential from "./Essential";
 import LatestProduct from "./LatestProduct";
 import OfferProduct from "./OfferProduct";
 
@@ -56,6 +58,8 @@ const Products = () => {
         <BestDeal products={office} />
         <OfferProduct products={livingRoom} />
         <LatestProduct products={all} />
+        <Promo />
+        <Essential products={bedroom} />
       </div>
     </div>
   );

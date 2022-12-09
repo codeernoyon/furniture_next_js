@@ -5,10 +5,11 @@ export const promo = [
     img: "/assets/promo/homepage-new-banner-2.png",
   },
   {
-    title: "meat pork canned",
+    title: "Meat Pork Canned",
     bottomText: "250g",
     price: "$9,9",
     offerPrice: "$15.6",
+    color: true,
     img: "/assets/promo/homepage-new-banner-3.png",
   },
   {

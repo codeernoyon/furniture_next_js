@@ -3,7 +3,7 @@ import { AiOutlineRight } from "react-icons/ai";
 import ProductArrow from "../../elements/ProductArrow";
 import { Product } from "./Product";
 
-function OfferProduct({ products }) {
+function Essential({ products }) {
   const ref = useRef();
   const [transitionV, setTransitionV] = useState(0);
 
@@ -55,7 +55,6 @@ function OfferProduct({ products }) {
     }
     // ----------  small device ----------
     if (dWidth < 420) {
-      console.log(dWidth);
       dWidth = ref?.current.offsetWidth + 45;
       if (sWidth - dWidth > -transitionV) {
         setTransitionV((prv) => prv - 195);
@@ -70,9 +69,9 @@ function OfferProduct({ products }) {
       <div className="flex justify-between px-2">
         {/* ========-- Product title --======== */}
         <div className="relative top-[0px] left-[0px] text-center flex-1 flex justify-start items-center space-x-5">
-          <span className="absolute top-[28px] left-[15%]  bg-main-clr h-[2px] w-[130px]"></span>
+          <span className="absolute top-[28px] left-[16%]  bg-main-clr h-[2px] w-[130px]"></span>
           <span className="relative text-[35px] font-medium text-main-clr ">
-            Best offer for you
+            Essential Products{" "}
           </span>
           <span className="flex space-x-1 items-center text-xl text-slate-500 cursor-pointer">
             All <AiOutlineRight />
@@ -93,7 +92,7 @@ function OfferProduct({ products }) {
           {/* ---------- item  ---------- */}
           {products?.map((item, index) => (
             <div key={index}>
-              <Product item={item} offer={true} />
+              <Product item={item} />
             </div>
           ))}
         </div>
@@ -102,4 +101,4 @@ function OfferProduct({ products }) {
   );
 }
 
-export default OfferProduct;
+export default Essential;

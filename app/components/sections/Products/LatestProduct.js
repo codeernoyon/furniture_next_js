@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
+import { AiOutlineRight } from "react-icons/ai";
 import ProductArrow from "../../elements/ProductArrow";
 import { Product } from "./Product";
-
 function LatestProduct({ products }) {
   const ref = useRef();
   const [transitionV, setTransitionV] = useState(0);
@@ -67,10 +67,13 @@ function LatestProduct({ products }) {
       {/* products top bar */}
       <div className="flex justify-between px-2">
         {/* ========-- Product title --======== */}
-        <div className="relative top-[0px] left-[0px] text-center">
-          <span className="absolute top-[28px] left-[53%]  bg-main-clr h-[2px] w-[130px]"></span>
+        <div className="relative top-[0px] left-[0px] text-center flex-1 flex justify-start items-center space-x-5">
+          <span className="absolute top-[28px] left-[10%]  bg-main-clr h-[2px] w-[130px]"></span>
           <span className="relative text-[35px] font-medium text-main-clr ">
             Latest Product
+          </span>
+          <span className="flex space-x-1 items-center text-xl text-slate-500 cursor-pointer">
+            All <AiOutlineRight />
           </span>
         </div>
         {/* ---- icons ----- */}
