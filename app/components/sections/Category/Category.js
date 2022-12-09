@@ -17,7 +17,7 @@ const Category = () => {
   return (
     <div className="relative w-screen h-auto">
       <BackStyle />
-      <div className="relative container m-auto z-[3]">
+      <div className="relative z-[3] px-5">
         {/* ========-- Product title --======== */}
         <div className="relative top-[0px] left-[0px] text-start">
           <span className="absolute top-[20px] left-[13%]  bg-main-clr h-[2px] w-[80px]"></span>

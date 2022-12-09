@@ -52,7 +52,7 @@ const Products = () => {
   return (
     <div className="relative w-screen h-auto ">
       <BackStyle />
-      <div className="relative container m-auto z-[3] pt-10">
+      <div className="relative z-[3] pt-10 md:px-5">
         <BestDeal products={office} />
         <OfferProduct products={livingRoom} />
         <LatestProduct products={all} />

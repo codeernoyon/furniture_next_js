@@ -3,6 +3,7 @@ import { HERO } from "../app/components/data/hero";
 import { Hero, Service } from "../app/components/sections";
 import Category from "../app/components/sections/Category/Category";
 import Products from "../app/components/sections/Products/Products";
+// import Promo from "../app/components/sections/Promo";
 
 export default function Home() {
   const { slider } = HERO;
@@ -16,6 +17,7 @@ export default function Home() {
       <Service />
       <Category />
       <Products />
+      {/* <Promo /> */}
     </div>
   );
 }
