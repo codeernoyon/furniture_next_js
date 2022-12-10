@@ -4,6 +4,7 @@ import BackStyle from "../../elements/BckStyle";
 import Promo from "../Promo";
 import BestDeal from "./BestDeal";
 import Essential from "./Essential";
+import FeatureBrand from "./FeatureBrand";
 import LatestProduct from "./LatestProduct";
 import OfferProduct from "./OfferProduct";
 
@@ -55,6 +56,7 @@ const Products = () => {
     <div className="relative w-screen h-auto ">
       <BackStyle />
       <div className="relative z-[3] pt-10 md:px-5">
+        <FeatureBrand />
         <BestDeal products={office} />
         <OfferProduct products={livingRoom} />
         <LatestProduct products={all} />
