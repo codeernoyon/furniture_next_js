@@ -20,11 +20,12 @@ body {
 }
 body::-webkit-scrollbar {
   width: 5px;
+  background-color: rgb(0, 1, 4);
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  background-color: #c56cf0;
+  background-color: #d1ad74;
 }
 
 input {
@@ -46,11 +47,6 @@ a {
 * {
   box-sizing: border-box !important;
   font-family: "Poppins", sans-serif;
-}
-
-/* scrollbar hide */
-.scrollbar_hide::-webkit-scrollbar: {
-  display: none;
 }
 
 /* logo font */

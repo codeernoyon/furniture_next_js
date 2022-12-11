@@ -66,12 +66,11 @@ function FeatureBrand({ products }) {
   return (
     <div className="py-5">
       {/* products top bar */}
-      <div className="flex justify-between md:px-2 pr-2">
+      <div className="flex justify-between items-center md:px-2 pr-2">
         {/* ========-- Product title --======== */}
-        <div className="relative top-[0px] left-[0px] text-center flex-1 flex justify-start items-start space-y-2 flex-col md:flex-row space-x-5">
-          <span className="absolute top-[28px] md:top-[28px] left-[40%] md:left-[10%]  bg-main-clr h-[2px] w-[130px]"></span>
-          <span className="relative text-[25px] md:text-[35px] font-medium text-main-clr ">
-            Featured Brands
+        <div className="relative top-[0px] left-[0px] text-center flex-1 flex items-center space-y-2 flex-col md:flex-row space-x-10">
+          <span className="relative text-[25px] md:text-[35px] font-medium text-main-clr before:absolute before:h-[2px] before:w-[60%] before:bg-main-clr before:top-[50%] before:left-[50%] capitalize">
+            Feature Brand
           </span>
           <span className="flex space-x-1 items-center text-sm md:text-xl text-slate-500 cursor-pointer">
             All Brands <AiOutlineRight />
@@ -92,17 +91,19 @@ function FeatureBrand({ products }) {
           {/* ---------- item  ---------- */}
           {brand?.map((item, index) => (
             <div key={index}>
-              <div className="relative overflow-hidden h-[295px] w-[195px] md:h-[300px] md:w-[245px] lg:h-[400px] lg:w-[350px] transition-all duration-300 shadow-md p-2 group cursor-pointer bg">
-                {/* image */}
-                <div className="relative">
-                  <Image src={item.img} width={350} height={200} />
-                </div>
-                {/* content */}
-                <div className="flex flex-col pt-8">
-                  <span className="text-slate-400">{item.title}</span>
-                  <span className="font-semibold text-md text-slate-300 group-hover:text-main-clr">
-                    {item.subTitle}
-                  </span>
+              <div className="relative overflow-hidden h-[295px] w-[195px] md:h-[300px] md:w-[245px] lg:h-[350px] lg:w-[350px] transition-all duration-300 shadow-md  group cursor-pointer bg">
+                <div className="p-2">
+                  {/* image */}
+                  <div className="relative">
+                    <Image src={item.img} width={350} height={250} />
+                  </div>
+                  {/* content */}
+                  <div className="flex flex-col pt-8">
+                    <span className="text-slate-400">{item.title}</span>
+                    <span className="font-semibold text-md text-slate-300 group-hover:text-main-clr">
+                      {item.subTitle}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

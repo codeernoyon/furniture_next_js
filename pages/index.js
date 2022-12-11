@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { HERO } from "../app/components/data/hero";
-import { Hero, Service } from "../app/components/sections";
+import { Footer, Hero, Service } from "../app/components/sections";
 import Category from "../app/components/sections/Category/Category";
 import Products from "../app/components/sections/Products/Products";
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
       <Service />
       <Category />
       <Products />
+      <Footer />
     </div>
   );
 }
