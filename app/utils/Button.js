@@ -2,11 +2,9 @@ import React from "react";
 
 const Button = ({ title, className, dClass, onClick }) => {
   return (
-    <div
-      className={`w-full flex justify-center items-center py-3 bg-slate-800 ${dClass}`}
-    >
+    <div className={`w-full flex justify-center items-center  ${dClass}`}>
       <button
-        className={`${className} hover:shadow-md transition-all duration-300`}
+        className={`${className} py-3 rounded-md text-slate-100 hover:shadow-md transition-all duration-300`}
         onClick={onClick}
       >
         {title}

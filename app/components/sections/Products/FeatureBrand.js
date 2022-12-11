@@ -68,9 +68,9 @@ function FeatureBrand({ products }) {
       {/* products top bar */}
       <div className="flex justify-between md:px-2 pr-2">
         {/* ========-- Product title --======== */}
-        <div className="relative top-[0px] left-[0px] text-center flex-1 flex justify-start items-center space-x-5">
-          <span className="absolute top-[50%] md:top-[28px] left-[15%] md:left-[10%]  bg-main-clr h-[2px] w-[130px]"></span>
-          <span className="relative text-[20px] md:text-[35px] font-medium text-main-clr ">
+        <div className="relative top-[0px] left-[0px] text-center flex-1 flex justify-start items-start space-y-2 flex-col md:flex-row space-x-5">
+          <span className="absolute top-[28px] md:top-[28px] left-[40%] md:left-[10%]  bg-main-clr h-[2px] w-[130px]"></span>
+          <span className="relative text-[25px] md:text-[35px] font-medium text-main-clr ">
             Featured Brands
           </span>
           <span className="flex space-x-1 items-center text-sm md:text-xl text-slate-500 cursor-pointer">
@@ -92,7 +92,7 @@ function FeatureBrand({ products }) {
           {/* ---------- item  ---------- */}
           {brand?.map((item, index) => (
             <div key={index}>
-              <div className="relative overflow-hidden h-[295px] w-[195px] md:h-[300px] md:w-[245px] lg:h-[370px] lg:w-[350px] transition-all duration-300 shadow-md p-2 group cursor-pointer bg">
+              <div className="relative overflow-hidden h-[295px] w-[195px] md:h-[300px] md:w-[245px] lg:h-[400px] lg:w-[350px] transition-all duration-300 shadow-md p-2 group cursor-pointer bg">
                 {/* image */}
                 <div className="relative">
                   <Image src={item.img} width={350} height={200} />
