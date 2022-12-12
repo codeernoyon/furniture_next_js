@@ -1,8 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { BsCart3, BsPerson } from "react-icons/bs";
 import { GiCrossedSwords } from "react-icons/gi";
+import { useDispatch } from "react-redux";
+import { setOpen } from "../../../redux/slices/cartModelSlice";
 import CartModel from "../../cart/CartModel";
 import { HEADER } from "../../data";
 import Search from "../../elements/Search";
@@ -11,8 +14,8 @@ import TopHeader from "./TopHeader";
 
 function Header() {
   const [searchClick, setSearchClick] = useState(false);
-  const [cartModelOpen, setCartModelOpen] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const dispatch = useDispatch();
   // ========-- data of header --===========
   const { topHeader, logo, menus } = HEADER;
   // ----------  Handle toggle ----------
@@ -26,32 +29,35 @@ function Header() {
       <div className=" flex justify-between items-center pt-2">
         {/*---------- Logo -------------*/}
         <div className="text-main-clr">
-          {logo.src ? (
-            <div>
-              <Image src={logo.src} layout="fill" />
-            </div>
-          ) : (
-            <div>
-              <h3 className="logo text-[35px] font-black ">{logo.alt}</h3>
-            </div>
-          )}
+          <Link href="/">
+            {logo.src ? (
+              <div>
+                <Image src={logo.src} layout="fill" />
+              </div>
+            ) : (
+              <div>
+                <h3 className="logo text-[35px] font-black ">{logo.alt}</h3>
+              </div>
+            )}
+          </Link>
         </div>
         {/* =======-- Nav area --======== */}
         <Nav menus={menus} toggle={toggle} />
         {/* Icons */}
         <div className="flex flex-1 justify-center md:justify-end">
           {/* ======== search ======== */}
-          <div className="mr-7 relative top-[10px] text-[30px] cursor-pointer ">
+          <div className="mr-7 mt-2 text-[30px] cursor-pointer ">
             {/* ------- Search Area ------- */}
             <div
               className={`${
                 searchClick
-                  ? "absolute top-[-70px] md:top-[-60px] left-[-32.4vw] md:left-[-66.7vw] lg:left-[-81vw] flex items-center justify-center  w-screen h-[150px] z-[1000] transition-all bg_tow"
+                  ? "absolute top-[0px] left-0 flex items-center justify-center  w-screen h-[150px] z-[1000] transition-all bg_tow"
                   : "absolute top-[-360px] left-[-80vw] flex items-center justify-center bg_tow w-screen h-[150px] z-[1000] transition-all"
               }`}
             >
+              {/* search */}
               <Search
-                className={`pt-2 pb-2 pl-5 pr-3 text-[15px] w-[250px] md:w-[400px] h-[50px] text-main-clr`}
+                className={`pt-2 pb-2 pl-5 pr-3 text-[15px] w-[250px] md:w-[400px] h-[50px] text-main-clr `}
               />
               <div className="relative top-[2px] w-[80px] h-[53px] bg flex items-center justify-center hover:text-main-clr">
                 <BiSearchAlt className="" />
@@ -70,7 +76,7 @@ function Header() {
           {/*  ============ Cart =========== */}
           <div
             className="relative p-2 rounded-[50%] border-[2px] mr-7 text-[20px] cursor-pointer hover:border-main-clr hover:text-main-clr"
-            onClick={() => setCartModelOpen(!cartModelOpen)}
+            onClick={() => dispatch(setOpen(true))}
           >
             <span className="absolute top-[-15px] right-[-5px] text-[15px]">
               0
@@ -106,7 +112,7 @@ function Header() {
       </div>
       {/* cart model */}
       <div>
-        <CartModel cartModelOpen={cartModelOpen} />
+        <CartModel />
       </div>
     </header>
   );

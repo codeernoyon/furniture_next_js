@@ -39,7 +39,7 @@ const Category = () => {
             {category?.map((item, index) => (
               <div
                 key={index}
-                className="h-[250px] min-w-[180px] bg_three rounded-md flex flex-col justify-center items-center space-y-5 cursor-pointer border-[1px] border-transparent shadow-md hover:border-main-clr "
+                className="h-[250px] min-w-[185px] bg_three rounded-md flex flex-col justify-center items-center space-y-5 cursor-pointer border-[1px] border-transparent shadow-md hover:border-main-clr "
               >
                 <div className="">
                   <div className="rounded-md bg-slate-400 overflow-hidden  h-[120px] w-[120px]">

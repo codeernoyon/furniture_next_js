@@ -1,6 +1,6 @@
 // import Footer from '../components/Footer'
 import { Provider } from "react-redux";
-import { Header, Layout } from "../app/components/sections";
+import { Footer, Header, Layout } from "../app/components/sections";
 import { store } from "../app/redux/sotre";
 import "../styles/globals.css";
 
@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
         </Layout>
         {/* <Footer/> */}
       </div>
+      <Footer />
     </Provider>
   );
 }

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import * as Yup from "yup";
@@ -12,6 +13,7 @@ function ProductsItems({
   discountFrom = false,
   offer,
 }) {
+  const router = useRouter();
   const ref = useRef();
   const [transitionV, setTransitionV] = useState(0);
   const [day, setDay] = useState();
@@ -121,6 +123,10 @@ function ProductsItems({
   const handleInput = (values) => {
     console.log(values);
   };
+  // ----------  handleRoute ----------
+  const handleRoute = (route) => {
+    router.push(route);
+  };
   useEffect(() => {
     startTimer();
   });
@@ -135,7 +141,10 @@ function ProductsItems({
               {title}
             </span>
             {/* allll */}
-            <span className="flex space-x-1 items-center text-xl text-slate-500 cursor-pointer">
+            <span
+              className="flex space-x-1 items-center text-xl text-slate-500 cursor-pointer"
+              onClick={() => handleRoute("products")}
+            >
               All <AiOutlineRight />
             </span>
             {/* ----- countdown ----- */}

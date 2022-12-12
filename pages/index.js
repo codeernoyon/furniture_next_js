@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { HERO } from "../app/components/data/hero";
-import { Footer, Hero, Service } from "../app/components/sections";
+import { Hero } from "../app/components/sections";
 import Category from "../app/components/sections/Category/Category";
 import Products from "../app/components/sections/Products/Products";
 export default function Home() {
@@ -12,10 +12,8 @@ export default function Home() {
         <title> Furniture </title>
       </Head>
       <Hero slides={slider} />
-      <Service />
       <Category />
       <Products />
-      <Footer />
     </div>
   );
 }

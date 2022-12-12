@@ -19,7 +19,7 @@ export const FooterN = {
       title: `Returns`,
     },
   ],
-  Service: [
+  Services: [
     {
       title: `Site Map`,
     },
