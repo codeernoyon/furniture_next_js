@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setProducts } from "../../../redux/slices/productsSlice";
 import BackStyle from "../../elements/BckStyle";
 import Promo from "../Promo";
 import FeatureBrand from "./FeatureBrand";
@@ -23,8 +22,7 @@ const Products = () => {
     const fetchData = async () => {
       const api = `https://course-api.com/react-store-products`;
       const { data } = await axios.get(api);
-      dispatch(setProducts(data));
-
+      localStorage.setItem("allItem", JSON.stringify(data));
       setAll(data);
       data.map((product) => {
         if (product?.category === "office") {
@@ -66,9 +64,9 @@ const Products = () => {
           discountFrom
         />
         <ProductsItems products={office} offer title="Best offer for you" />
-        <ProductsItems products={office} title="Latest Product" />
+        <ProductsItems products={livingRoom} title="Latest Product" />
         <Promo />
-        <ProductsItems products={office} title="Essential Products" />
+        <ProductsItems products={kitchen} title="Essential Products" />
       </div>
     </section>
   );

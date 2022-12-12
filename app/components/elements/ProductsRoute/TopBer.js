@@ -23,13 +23,13 @@ const TopBer = ({ handleCol, handleRow }) => {
             <div className="flex items-center space-x-3 text-3xl">
               <span
                 className="cursor-pointer hover:text-main-clr"
-                onClick={() => handleCol}
+                onClick={() => handleRow()}
               >
                 <BsColumnsGap />
               </span>
               <span
                 className="cursor-pointer hover:text-main-clr"
-                onClick={() => handleRow}
+                onClick={() => handleCol()}
               >
                 <AiOutlinePicCenter />
               </span>

@@ -2,9 +2,9 @@ import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import * as Yup from "yup";
+import { Product } from "../../elements/Product";
 import ProductArrow from "../../elements/ProductArrow";
 import { AppForm, FormBtn, FormInput } from "../../shared/Form";
-import { Product } from "./Product";
 
 function ProductsItems({
   countDown = false,
@@ -52,7 +52,7 @@ function ProductsItems({
     let dWidth = ref?.current.offsetWidth;
     const sWidth = ref?.current.scrollWidth;
     // ----------  lg device ----------
-    if (dWidth > 768) {
+    if (dWidth > 820) {
       dWidth = ref?.current.offsetWidth + 200;
       if (sWidth - dWidth > -transitionV) {
         setTransitionV((prv) => prv - 280);
@@ -61,7 +61,7 @@ function ProductsItems({
       }
     }
     // ----------  mid device ----------
-    if (dWidth < 768 && dWidth > 420) {
+    if (dWidth < 820 && dWidth > 420) {
       dWidth = ref?.current.offsetWidth + 45;
       if (sWidth - dWidth > -transitionV) {
         setTransitionV((prv) => prv - 245);
