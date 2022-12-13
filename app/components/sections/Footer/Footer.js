@@ -8,8 +8,10 @@ import FooterRightTop from "./FooterRightTop";
 function Footer() {
   const { Information, Services } = FooterN;
   return (
-    <footer className="pt-10 bg min-h-[50vh] lg:h-[50vh] ">
-      <Service />
+    <footer className="pt-10 bg min-h-[50vh] lg:h-[53vh] ">
+      <div className="overflow-x-hidden">
+        <Service />
+      </div>
       <div className="h-full grid md:grid-cols-2 px-2 md:px-5 bg lg:flex justify-center items-center">
         <div className="w-full h-full pt-16 md:w-[100%] lg:w-[35%] bg_tow px-5 rounded-sm text-slate-200">
           <h2 className="text-4xl text-slate-400 font">Furniture</h2>

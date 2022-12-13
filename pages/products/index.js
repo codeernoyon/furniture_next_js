@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { products } from "../../app/components/data/products";
 import { Product } from "../../app/components/elements/Product";
 import FilterItems from "../../app/components/elements/ProductsRoute/FilterItems";
 import TopBer from "../../app/components/elements/ProductsRoute/TopBer";
+import { selectProductNav } from "../../app/redux/slices/productsSlice";
 const product = () => {
   const [col, setCol] = useState(false);
   const [productsItems, setProductsItems] = useState();
+  const navOpen = useSelector(selectProductNav);
 
   const { catagories, price, company } = products;
   // ----------  handle col ----------
@@ -20,12 +23,16 @@ const product = () => {
     setProductsItems(JSON.parse(localStorage.getItem("allItem")));
   }, []);
   return (
-    <div className="bg pt-[120px] pb-10 px-5 pr-10">
+    <div className="bg pt-[120px] pb-10 md:px-2 lg:px-5 lg:pr-10">
       {/* top ber */}
       <TopBer handleCol={handleCol} handleRow={handleRow} />
-      <div className="flex">
+      <div className="relative flex h-[1100px] overflow-y-hidden">
         {/* left */}
-        <div className="w-[20%] text-slate-300 capitalize bg_tow px-3 py-5 pb-10">
+        <div
+          className={`absolute ${
+            navOpen ? "left-0" : "left-[-100%]"
+          } lg:left-0 lg:relative  w-[70%] md:w-[40%] lg:w-[17%]  text-slate-300 capitalize bg_tow px-3 py-5 pb-10 z-30 transition-all duration-300`}
+        >
           {/* catagories */}
           <FilterItems title="catagories" items={catagories} />
 
@@ -36,8 +43,8 @@ const product = () => {
           <FilterItems title="company" items={company} />
         </div>
         {/* right */}
-        <div className="px-3 py-5 flex-1 ">
-          <div className="w-full flex justify-center gap-5 flex-wrap">
+        <div className="lg:px-2 pt-5 flex-1 overflow-y-scroll scrollbar-hide">
+          <div className="w-full flex justify-start flex-wrap scroll-smooth">
             {productsItems?.map((product, index) => (
               <div className={`${col && "w-[100%]"}`} key={index}>
                 <Product item={product} col={col} />
