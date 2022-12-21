@@ -45,7 +45,7 @@ const CartModel = () => {
         <CartModelItem />
       </div>
       {/* button  */}
-      <div className="flex flex-col gap-3 py-3">
+      <div className="flex flex-col md:flex-row gap-3 py-3">
         <Button
           title="Cart"
           dClass=""

@@ -1,8 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { BsCart3 } from "react-icons/bs";
 
 export const Product = ({ item, offer = false, col = false }) => {
+  const router = useRouter();
   const [off, setOff] = useState();
   useEffect(() => {
     setOff(Math.floor(Math.random() * 20));
@@ -28,9 +31,12 @@ export const Product = ({ item, offer = false, col = false }) => {
         )}
 
         {/* image */}
-        <div className=" relative h-[160px] w-[160px] md:h-[150px] md:w-[185px] lg:h-[200px] lg:w-[210px] rounded-md overflow-hidden cursor-pointer">
-          <Image src={item?.image} alt="product" sizes="" layout="fill" />
-        </div>
+        <Link href={`product/${item.id}`}>
+          <div className=" relative h-[160px] w-[160px] md:h-[150px] md:w-[185px] lg:h-[200px] lg:w-[210px] rounded-md overflow-hidden cursor-pointer">
+            <Image src={item?.image} alt="product" layout="fill" />
+          </div>
+        </Link>
+        {/* // ----------  details ---------- */}
         <div
           className={`flex flex-col items-start ${col ? "w-auto" : "w-full"}`}
         >
@@ -53,14 +59,14 @@ export const Product = ({ item, offer = false, col = false }) => {
                       : ""
                   }`}
                 >
-                  $ {Math.floor(item?.price / 20)}
+                  $ {item?.price}
                 </span>
               </div>
               {offer && (
                 <div className="">
                   {/* offer price  */}
                   <span className="text-slate-400">
-                    $ {Math.floor(((item?.price / 10) * 39) / 100)}
+                    $ {item.price - Math.floor((item?.price / 100) * off)}
                   </span>
                 </div>
               )}

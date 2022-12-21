@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import BackStyle from "../../elements/BckStyle";
@@ -6,7 +5,7 @@ import Promo from "../Promo";
 import FeatureBrand from "./FeatureBrand";
 import ProductsItems from "./ProductsItems";
 
-const Products = () => {
+const Products = ({ data }) => {
   const [all, setAll] = useState(null);
   const [office, setOffice] = useState(null);
   const [livingRoom, setLivingRoom] = useState(null);
@@ -20,8 +19,6 @@ const Products = () => {
   // ----------  Api data ---------
   useEffect(() => {
     const fetchData = async () => {
-      const api = `https://course-api.com/react-store-products`;
-      const { data } = await axios.get(api);
       localStorage.setItem("allItem", JSON.stringify(data));
       setAll(data);
       data.map((product) => {

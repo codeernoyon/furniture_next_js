@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
@@ -22,7 +23,7 @@ function ProductsItems({
   const [second, setSecond] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
+  // ----------  slider ----------
   const rightArrow = () => {
     let dWidth = ref?.current.offsetWidth;
 
@@ -123,10 +124,7 @@ function ProductsItems({
   const handleInput = (values) => {
     console.log(values);
   };
-  // ----------  handleRoute ----------
-  const handleRoute = (route) => {
-    router.push(route);
-  };
+
   useEffect(() => {
     startTimer();
   });
@@ -140,13 +138,14 @@ function ProductsItems({
             <span className="relative text-[25px] md:text-[35px] font-medium text-main-clr before:absolute before:h-[2px] before:w-[60%] before:bg-main-clr before:top-[50%] before:left-[50%] capitalize">
               {title}
             </span>
-            {/* allll */}
-            <span
-              className="flex space-x-1 items-center text-xl text-slate-500 cursor-pointer"
-              onClick={() => handleRoute("products")}
-            >
-              All <AiOutlineRight />
-            </span>
+
+            {/* all products */}
+            <Link href={"products"}>
+              <span className="flex space-x-1 items-center text-xl text-slate-500 cursor-pointer">
+                All Products <AiOutlineRight />
+              </span>
+            </Link>
+
             {/* ----- countdown ----- */}
             {countDown && (
               <div className="flex space-x-3 pl-0 lg:pl-5 text-slate-300 items-center mt-3">
@@ -172,6 +171,7 @@ function ProductsItems({
               </div>
             )}
           </div>
+
           {/* ---- icons ----- */}
           <ProductArrow rightArrow={rightArrow} leftArrow={leftArrow} />
         </div>
@@ -219,7 +219,7 @@ function ProductsItems({
               <FormBtn
                 title="Register"
                 onClick={handleInput}
-                className="w-full bg-main-clr"
+                className="w-full bg-main-clr py-3"
               />
             </AppForm>
           </div>

@@ -95,7 +95,12 @@ function FeatureBrand({ products }) {
                 <div className="p-2">
                   {/* image */}
                   <div className="relative">
-                    <Image src={item.img} width={350} height={250} />
+                    <Image
+                      src={item.img}
+                      alt="image"
+                      width={350}
+                      height={250}
+                    />
                   </div>
                   {/* content */}
                   <div className="flex flex-col pt-8">

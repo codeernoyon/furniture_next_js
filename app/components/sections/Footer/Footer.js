@@ -14,7 +14,9 @@ function Footer() {
       </div>
       <div className="h-full grid md:grid-cols-2 px-2 md:px-5 bg lg:flex justify-center items-center">
         <div className="w-full h-full pt-16 md:w-[100%] lg:w-[35%] bg_tow px-5 rounded-sm text-slate-200">
-          <h2 className="text-4xl text-slate-400 font">Furniture</h2>
+          <h2 className="text-4xl text-slate-400 font font-black logo">
+            Furniture
+          </h2>
           <p className="mt-5 mb-2 w-[90%] text-sm">
             We are a team of designers and developers that create high quality
             Magento, Prestashop, Opencart.
