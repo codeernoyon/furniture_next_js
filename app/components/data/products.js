@@ -1,10 +1,13 @@
 export const products = {
   catagories: [
     {
+      title: "all",
+    },
+    {
       title: "office",
     },
     {
-      title: "livingRoom",
+      title: "living room",
     },
     {
       title: "bedroom",

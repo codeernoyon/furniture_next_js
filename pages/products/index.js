@@ -4,10 +4,14 @@ import { products } from "../../app/components/data/products";
 import { Product } from "../../app/components/elements/Product";
 import FilterItems from "../../app/components/elements/ProductsRoute/FilterItems";
 import TopBer from "../../app/components/elements/ProductsRoute/TopBer";
-import { selectProductNav } from "../../app/redux/slices/productsSlice";
+import {
+  selectFilterItem,
+  selectProductNav,
+} from "../../app/redux/slices/productsSlice";
 const product = () => {
+  const filterProducts = useSelector(selectFilterItem);
   const [col, setCol] = useState(false);
-  const [productsItems, setProductsItems] = useState();
+  const [allProduct, setAllProduct] = useState();
   const navOpen = useSelector(selectProductNav);
 
   const { catagories, price, company } = products;
@@ -19,9 +23,14 @@ const product = () => {
   const handleRow = () => {
     setCol(false);
   };
+  // ----------  allProducts ----------
   useEffect(() => {
-    setProductsItems(JSON.parse(localStorage.getItem("allItem")));
-  }, []);
+    if (filterProducts === null) {
+      setAllProduct(JSON.parse(localStorage.getItem("allItem")));
+    } else {
+      setAllProduct(filterProducts);
+    }
+  }, [filterProducts]);
   return (
     <div className="bg pt-[120px] pb-10 md:px-2 lg:px-5 lg:pr-10">
       {/* top ber */}
@@ -43,9 +52,9 @@ const product = () => {
           <FilterItems title="company" items={company} />
         </div>
         {/* right */}
-        <div className="lg:px-2 pt-5 flex-1 overflow-y-scroll scrollbar-hide">
+        <div className="lg:px-2 pt-2 flex-1 overflow-y-scroll scrollbar-hide">
           <div className="w-full flex justify-start flex-wrap scroll-smooth">
-            {productsItems?.map((product, index) => (
+            {allProduct?.map((product, index) => (
               <div className={`${col && "w-[100%]"}`} key={index}>
                 <Product item={product} col={col} />
               </div>
