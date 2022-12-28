@@ -21,7 +21,7 @@ function FormInput({
         <input
           name={name}
           onBlur={() => setFieldTouched(name)}
-          // onChange={handleChange(name)}
+          onChange={() => handleChange(name)}
           value={values[name]}
           type={inputType}
           {...otherProps}

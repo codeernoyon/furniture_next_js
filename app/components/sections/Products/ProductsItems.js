@@ -84,7 +84,7 @@ function ProductsItems({
   // ----------  countdown ----------
   let interval;
   const startTimer = () => {
-    const countDownDay = new Date("December 23, 2022").getTime();
+    const countDownDay = new Date("December 23, 2023").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       // ----------  distance days ----------

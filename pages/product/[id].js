@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const paths = data.map((product) => ({ params: { id: `${product?.id}` } }));
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -39,12 +39,16 @@ const SingleProduct = ({ product }) => {
   } = product[0];
 
   return (
-    <div className="pt-[120px] px-5 bg">
-      <div>
+    <div className="pt-[120px] px-5 bg w-screen">
+      <div className="w-full flex flex-col md:flex-row gap-5 md:gap-0">
         {/* image */}
-        <LeftImage images={images} />
+        <div className="flex-1">
+          <LeftImage images={images} />
+        </div>
         {/* product details */}
-        <SingleProducts productsDetails={product[0]} />
+        <div className="flex-1">
+          <SingleProducts productsDetails={product[0]} />
+        </div>
       </div>
     </div>
   );

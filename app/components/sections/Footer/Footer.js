@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import { FiPhoneCall, FiSend } from "react-icons/fi";
 import { FooterN } from "../../data/footer";

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useEffect, useRef, useState } from "react";
 import { category } from "../../data/category";
 import BackStyle from "../../elements/BckStyle";

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 const CartModelItem = () => {
@@ -8,7 +8,6 @@ const CartModelItem = () => {
       <Image
         src="/assets/category/hanbag.webp"
         alt="photo"
-        loading="lazy"
         height={60}
         width={60}
         className="rounded-md"

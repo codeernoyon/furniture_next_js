@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -7,6 +7,11 @@ import { BsCart3 } from "react-icons/bs";
 export const Product = ({ item, offer = false, col = false }) => {
   const router = useRouter();
   const [off, setOff] = useState();
+  const routing = (item) => {
+    console.log("hii");
+
+    router.push(`product/${item.id}`);
+  };
   useEffect(() => {
     setOff(Math.floor(Math.random() * 20));
   }, []);
@@ -32,7 +37,10 @@ export const Product = ({ item, offer = false, col = false }) => {
 
         {/* image */}
         <Link href={`product/${item.id}`}>
-          <div className=" relative h-[160px] w-[160px] md:h-[150px] md:w-[185px] lg:h-[200px] lg:w-[210px] rounded-md overflow-hidden cursor-pointer">
+          <div
+            className=" relative h-[160px] w-[160px] md:h-[150px] md:w-[185px] lg:h-[200px] lg:w-[210px] rounded-md overflow-hidden cursor-pointer"
+            onClick={() => routing(item)}
+          >
             <Image src={item?.image} alt="product" layout="fill" />
           </div>
         </Link>

@@ -50,7 +50,7 @@ const Products = ({ data }) => {
   }, []);
 
   return (
-    <section className="relative w-screen h-auto ">
+    <section className="relative w-full h-auto ">
       <BackStyle />
       <div className="relative z-[3] pt-10 md:px-5">
         <FeatureBrand />

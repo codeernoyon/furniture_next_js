@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useRef, useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import { brand } from "../../data/brand";

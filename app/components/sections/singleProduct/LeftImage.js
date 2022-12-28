@@ -1,17 +1,10 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 const LeftImage = ({ images }) => {
   const url = images[0].thumbnails.large.url;
   return (
-    <div className="h-full w-full">
-      <div className="relative w-20 h-20">
-        <Image
-          src={url}
-          alt="product image"
-          fill
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-        />
+    <div className="h-full w-[350px] py-7 flex justify-center items-center">
+      <div className="relative w-[300px] h-[400px] rounded-md overflow-hidden cursor-pointer">
+        <Image src={url} alt="product image" layout="fill" />
       </div>
     </div>
   );
