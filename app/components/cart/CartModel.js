@@ -50,13 +50,13 @@ const CartModel = () => {
           title="Cart"
           dClass=""
           className="bg-main-clr py-3 px-16 rounded-md uppercase"
-          onClick={() => handleRoute("cart")}
+          onClick={() => handleRoute("/cart")}
         />
         <Button
           title="Checkout"
           dClass=""
           className="bg-main-clr py-3 px-20 rounded-md "
-          onClick={() => handleRoute("checkout")}
+          onClick={() => handleRoute("/checkout")}
         />
       </div>
     </div>

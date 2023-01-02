@@ -15,6 +15,7 @@ const SingleProducts = ({ productsDetails, className }) => {
   } = productsDetails;
   // increment
   const increment = () => {
+    if (updateQuantity >= stock) return;
     setUpdateQuantity((prv) => prv + 1);
   };
   // decrement
@@ -39,7 +40,13 @@ const SingleProducts = ({ productsDetails, className }) => {
           <div className="w-[250px] bg_four border-[1px] border-main-clr my-3 rounded-md py-3 px-5">
             <span>
               availability:{" "}
-              <span className="text-emerald-500	">in stoke({stock})</span>
+              <span
+                className={`${
+                  stock === 0 ? "text-red-500" : "text-emerald-500"
+                }`}
+              >
+                in stoke({stock})
+              </span>
             </span>
           </div>
         </div>
