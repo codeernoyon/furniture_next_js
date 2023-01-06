@@ -6,6 +6,7 @@ const Button = ({ title, className, dClass, onClick }) => {
       <button
         className={`${className} rounded-md text-slate-100 hover:shadow-md transition-all duration-300`}
         onClick={onClick}
+        type="button"
       >
         {title}
       </button>

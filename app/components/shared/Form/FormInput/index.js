@@ -17,15 +17,15 @@ function FormInput({
 
   return (
     <div className={`${!editProfile ? "mb-4" : "mb-6"}`}>
-      <div className="relative flex items-center border-[1px] rounded-md border-main-clr">
+      <div className="inputBox relative flex items-center border-[1px] rounded-md border-main-clr">
         <input
           name={name}
           onBlur={() => setFieldTouched(name)}
-          onChange={() => handleChange(name)}
+          onChange={handleChange(name)}
           value={values[name]}
           type={inputType}
           {...otherProps}
-          className={`outline-none bg-transparent py-3 px-5 rounded w-full text-main-clr ${className}`}
+          className={`input outline-none bg-transparent py-3 px-5 rounded w-full text-main-clr ${className}`}
         />
         {type === "password" && (
           <>

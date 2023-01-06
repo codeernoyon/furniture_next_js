@@ -21,8 +21,6 @@ function ProductsItems({
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
   const [second, setSecond] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
   // ----------  slider ----------
   const rightArrow = () => {
     let dWidth = ref?.current.offsetWidth;
@@ -206,13 +204,13 @@ function ProductsItems({
           </div>
           <div className="mt-10 w-full">
             <AppForm
-              initialValues={{ email, password }}
+              initialValues={{ email: "", password: "" }}
               validationSchema={validationSchema}
               onSubmit={handleInput}
             >
-              <FormInput name={email} placeholder="Enter email" />
+              <FormInput name="email" placeholder="Enter email" />
               <FormInput
-                name={password}
+                name="password"
                 placeholder="Enter Password"
                 type="password"
               />
